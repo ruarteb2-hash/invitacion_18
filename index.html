@@ -7,14 +7,14 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=pacifico&family=inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    /* Fondo degradado tropical a pantalla completa */
+    /* Estilos CSS */
     html,body{
       height:100%;
       margin:0;
       font-family:'inter',sans-serif;
       background: linear-gradient(135deg, #fec8a0 0%, #faaac2 30%, #f89088 70%, #ff8ca0 100%);
       background-attachment: fixed;
-      overflow-x: hidden; /* Evitar scroll horizontal */
+      overflow-x: hidden;
     }
 
     .full-height{min-height:100vh}
@@ -26,13 +26,10 @@
       text-align:center;
       padding:24px;
       transition: opacity 0.4s ease-out; 
-      
-      /* Fondo de bienvenida: Blanco con toques muy suaves de naranja/amarillo */
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 240, 220, 0.9) 50%, rgba(255, 230, 200, 0.95) 100%);
-      color: #333; /* Color de texto general */
+      color: #333;
     }
     
-    /* **** ESTILO DEL RECUADRO DE BIENVENIDA (PLANTILLA BASE) **** */
     .welcome-card {
         background: rgba(255, 248, 240, 0.65); 
         backdrop-filter: blur(5px); 
@@ -44,7 +41,6 @@
         flex-direction: column;
         align-items: center;
         max-width: 90%;
-        /* Importante para centrar la unidad completa */
         margin-left: auto;
         margin-right: auto;
     }
@@ -68,11 +64,9 @@
     .welcome-emojis span:nth-child(4) { animation-delay: 0.6s; }
     .welcome-emojis span:nth-child(5) { animation-delay: 0.8s; }
 
-    /* ESTILO PARA EL TÍTULO "¡Aloha!" */
     .welcome-title{
       font-family:'pacifico',cursive;
       font-size:clamp(28px,6vw,56px);
-      /* Degradado principal de la invitación (Naranja-Amarillo) */
       background: linear-gradient(to right, #FF4500, #FFD700); 
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
@@ -85,7 +79,6 @@
       font-size:clamp(18px,3vw,26px); 
       margin-top:0px;
       font-weight:normal; 
-      /* Degradado principal de la invitación (Naranja-Amarillo) */
       background: linear-gradient(to right, #FF4500, #FFD700); 
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
@@ -93,30 +86,22 @@
       line-height: 1.2;
     }
     
-    /* 🔑 **** ESTILO PARA EL BOTÓN DE ENTRADA (CENTRADO PERFECTO FINAL) **** 🔑 */
     .enter-btn{
-        /* COPIAMOS PROPIEDADES DE .welcome-card */
         background: rgba(255, 248, 240, 0.65); 
         backdrop-filter: blur(5px); 
         border: 2px solid rgba(253, 224, 71, 0.7); 
         box-shadow: 0 8px 30px rgba(0,0,0,0.3); 
-        
         color: transparent; 
         padding:15px 15px; 
         border-radius:20px; 
         font-weight:800;
         cursor:pointer;
-        
         transition: all 0.2s ease-in-out;
-        
-        /* Centrado interno */
         display: flex; 
         align-items: center; 
-        justify-content: center; /* Centra el contenido (el texto) */
+        justify-content: center;
         gap: 5px; 
         min-height: 65px; 
-        
-        /* Ancho máximo para que se vea compacto */
         max-width: 220px; 
         width: 90%; 
         margin: 22px auto 0 auto; 
@@ -128,23 +113,18 @@
         border-color: #FFD700; 
     }
 
-    /* **** ESTILO PARA EL TEXTO DEL BOTÓN **** */
     .enter-btn-text {
         font-family: 'pacifico', cursive;
         font-size: clamp(22px, 6vw, 36px); 
-        
-        /* Degradado Naranja-Dorado */
         background: linear-gradient(to right, #FF4500, #FFD700); 
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-shadow: 1px 1px 8px rgba(255,100,0,0.8); 
-        
         line-height: 1.1; 
         display: block; 
         text-align: center; 
     }
     
-    /* Los estilos de la invitación no han cambiado */
     .invitation{
       display:none;
       padding:20px;
@@ -153,7 +133,6 @@
       transition: opacity 0.4s ease-in;
     }
 
-    /* Estilos adicionales (resto de la invitación) */
     .card{width:100%;max-width:980px;margin:24px auto;background:rgba(255, 248, 240, 0.92);border-radius:20px;padding:20px;box-shadow:0 10px 40px rgba(255, 107, 107, 0.3), 0 15px 50px rgba(255, 165, 0, 0.2);border:1px solid rgba(255, 200, 150, 0.5);position:relative;overflow:hidden}
     .main-title-container{display: flex;flex-direction: column;align-items: center;justify-content: center;gap: 0px;text-align: center;margin-bottom: 5px;position: relative;}
     .main-title-emoji-row { display: flex;justify-content: center;gap: 10px;margin-bottom: 5px; }
@@ -165,7 +144,6 @@
     .main-title-text{font-family:'pacifico',cursive;font-weight:normal;font-size:clamp(24px,5vw,45px);background: linear-gradient(to right, #FDE047, #059669);-webkit-background-clip:text;-webkit-text-fill-color:transparent;outline:none;display: block;text-align: center;padding-left: 2px;padding-right: 2px;line-height: 1.2;}
     .main-title-name {font-family:'pacifico',cursive;font-weight:normal;font-size:clamp(30px, 6.5vw, 55px);background: linear-gradient(to right, #FDE047, #059669);-webkit-background-clip:text;-webkit-text-fill-color:transparent;outline:none;display: block;margin-top: -10px;text-align: center;padding-left: 2px;padding-right: 2px;line-height: 1.2;}
     .photo-slot{background:#eee;border-radius:14px;overflow:hidden;position:relative;cursor:pointer;border:4px solid #964B00;box-shadow:inset 0 0 0 2px #FFD700, 0 4px 8px rgba(0,0,0,0.2);transition:all .2s ease-in-out;position:relative}.photo-slot:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 2px #FFE082, 0 8px 16px rgba(0,0,0,0.3)}.photo-slot img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:1/1}.photo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.95);background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.25));opacity:0;transition:opacity .18s}.photo-slot:hover .photo-overlay{opacity:1}
-    .input{width:100%;padding:.6rem .8rem;border-radius:10px;border:1px solid rgba(0,0,0,0.2);background:white;font-weight:600;color:#333;text-shadow:none}.input::placeholder{color:#888}.input:focus{outline:none;border-color:#f59e0b;background:#fff;box-shadow:0 0 0 2px rgba(245,158,11,0.3)}
     .input-highlight{font-family:'pacifico',cursive;font-weight:normal;font-size:clamp(18px, 3.5vw, 24px);background:linear-gradient(to right, #E91E63, #FFEB3B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 5px rgba(255, 60, 100, 0.5);width:100%;padding:.6rem .8rem;border-radius:10px;border:1px solid rgba(0,0,0,0.2);background-color:rgba(255,255,255,0.9);color:transparent;text-align:center}
     .input-highlight::placeholder{background:linear-gradient(to right, #E91E63, #FFEB3B);-webkit-background-clip:text;-webkit-text-fill-color:rgba(0,0,0,0.6);text-shadow:none}.input-highlight:focus{outline:none;border-color:#f59e0b;background-color:#fff;box-shadow:0 0 0 2px rgba(245,158,11,0.3);-webkit-text-fill-color:#333;text-shadow:none}
     .text-body-highlight{font-family:'pacifico',cursive;font-weight:normal;font-size:clamp(24px, 5vw, 36px);background:linear-gradient(to right, #FF4500, #FFD700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:1px 1px 8px rgba(255,100,0,0.8);margin-bottom:15px;display:inline-block}
@@ -179,8 +157,34 @@
     .countdown-title {font-family: 'pacifico', cursive;font-size: clamp(22px, 5vw, 32px);font-weight: normal;color: #964B00;text-shadow: 1px 1px 3px rgba(0,0,0,0.1);margin-bottom: 12px;}
     .countdown-grid {display: grid;grid-template-columns: repeat(4, 1fr);gap: 12px;max-width: 400px;margin: 0 auto;}
     .countdown-box {background: rgba(255, 255, 255, 0.6);border: 1px solid rgba(255, 200, 150, 0.5);border-radius: 12px;padding: 10px 5px;box-shadow: 0 4px 10px rgba(0,0,0,0.05);}
-    .countdown-finished {font-family: 'pacifico', cursive;font-size: clamp(28px, 6vw, 40px);font-weight: normal;color: #FF4500;background: linear-gradient(to right, #E91E63, #FFEB3B);-webkit-background-clip: text;-webkit-text-fill-color: transparent;text-shadow: 0 2px 10px rgba(255, 100, 0, 0.5);padding: 15px;border: 3px solid #FFD700;border-radius: 15px;animation: pulse 2s infinite;}
-    @keyframes pulse {0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.7); }70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(255, 165, 0, 0); }100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 165, 0, 0); }}
+    
+    /* ESTILO PARA EL MENSAJE FINAL (CONTEO TERMINADO) */
+    .countdown-finished {
+        font-family: 'pacifico', cursive;
+        font-size: clamp(20px, 4vw, 28px);
+        font-weight: normal;
+        background: linear-gradient(to right, #FDE047, #059669); 
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 8px rgba(5, 150, 105, 0.3);
+        padding: 10px; 
+        border: none; 
+        border-radius: 0; 
+        animation: none; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        gap: 8px; 
+        line-height: 1.2; 
+    }
+    .countdown-finished .emoji {
+        -webkit-background-clip: unset; 
+        -webkit-text-fill-color: initial; 
+        text-shadow: none; 
+        font-size: clamp(22px, 4.5vw, 32px); 
+        display: inline-block; 
+    }
+
     .countdown-number {font-size: clamp(24px, 6vw, 36px);font-weight: 800;line-height: 1.1;background: linear-gradient(to right, #FDE047, #059669);-webkit-background-clip: text;-webkit-text-fill-color: transparent;text-shadow: 0 0 10px rgba(5, 150, 105, 0.2);}
     .countdown-label {font-size: 11px;font-weight: 600;color: #6B4F4F;text-transform: uppercase;letter-spacing: 0.5px;margin-top: 4px;}
     .confetti-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:hidden;z-index:9999;opacity:0;transition:opacity 1s ease-out;}
@@ -216,13 +220,12 @@
         <p class="welcome-sub">Bienvenido a mi fiesta hawaiana – mis 18 años – Leandro</p>
       </div>
       
-      <button id="enterBtn" class="enter-btn">
+      <button id="enterBtn" class="enter-btn" type="button">
           <span class="enter-btn-text">Entrar a la <br> invitación</span>
       </button>
 
     </div>
   </div>
-
   <div id="invitation" class="invitation">
     <div class="card" role="main">
 
@@ -244,27 +247,32 @@
         </div>
       
       <div class="countdown-container">
-        <div class="countdown-title">¡Falta poco!</div> 
-        <div class="countdown-grid">
-          <div class="countdown-box">
-            <div id="countdown-days" class="countdown-number">00</div>
-            <div class="countdown-label">Días</div>
+          <div id="countdownFinishedMessage" class="countdown-finished" style="display: none;">
+            <span class="emoji">🎊</span> ¡LLEGÓ EL DÍA! <span class="emoji">🎊</span>
           </div>
-          <div class="countdown-box">
-            <div id="countdown-hours" class="countdown-number">00</div>
-            <div class="countdown-label">Horas</div>
+
+          <div id="countdownGrid" class="countdown-grid">
+              <div class="countdown-box">
+                  <div id="countdown-days" class="countdown-number">00</div>
+                  <div class="countdown-label">Días</div>
+              </div>
+              <div class="countdown-box">
+                  <div id="countdown-hours" class="countdown-number">00</div>
+                  <div class="countdown-label">Horas</div>
+              </div>
+              <div class="countdown-box">
+                  <div id="countdown-minutes" class="countdown-number">00</div>
+                  <div class="countdown-label">Minutos</div>
+              </div>
+              <div class="countdown-box">
+                  <div id="countdown-seconds" class="countdown-number">00</div>
+                  <div class="countdown-label">Segundos</div>
+              </div>
           </div>
-          <div class="countdown-box">
-            <div id="countdown-minutes" class="countdown-number">00</div>
-            <div class="countdown-label">Minutos</div>
-          </div>
-          <div class="countdown-box">
-            <div id="countdown-seconds" class="countdown-number">00</div>
-            <div class="countdown-label">Segundos</div>
-          </div>
-        </div>
       </div>
-      <div class="photo-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;"> <label class="photo-slot" tabindex="0"><input type="file" accept="image/*" class="image-input" style="display:none" /><img id="photo1" src="https://i.ibb.co/67snptsC/IMG-20251030-161702.jpg" alt="Foto 1"/><div class="photo-overlay"></div></label>
+      
+      <div class="photo-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;"> 
+        <label class="photo-slot" tabindex="0"><input type="file" accept="image/*" class="image-input" style="display:none" /><img id="photo1" src="https://i.ibb.co/67snptsC/IMG-20251030-161702.jpg" alt="Foto 1"/><div class="photo-overlay"></div></label>
         <label class="photo-slot" tabindex="0"><input type="file" accept="image/*" class="image-input" style="display:none" /><img id="photo2" src="https://i.ibb.co/twQW2HLX/foto1.jpg" alt="Foto 2"/><div class="photo-overlay"></div></label>
         <label class="photo-slot" tabindex="0"><input type="file" accept="image/*" class="image-input" style="display:none" /><img id="photo3" src="https://i.ibb.co/WWgZpcb9/AGC-20251026-164742859.jpg" alt="Foto 3"/><div class="photo-overlay"></div></label>
         <label class="photo-slot" tabindex="0"><input type="file" accept="image/*" class="image-input" style="display:none" /><img id="photo4" src="https://i.ibb.co/93g0FQ3X/foto3.jpg" alt="Foto 4"/><div class="photo-overlay"></div></label>
@@ -291,4 +299,20 @@
       
       <hr style="margin:18px 0; border-color: rgba(100, 50, 0, 0.1);"/>
       
- 
+      <div style="text-align: center; position: relative;">
+        <div class="footer-emojis"><span>🎊</span><span>🌴</span><span>🥳</span><span>🌴</span><span>🎊</span></div>
+      </div>
+    </div>
+  </div>
+  <div id="confettiContainer" class="confetti-container"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        
+        // ELEMENTOS DOM
+        const music = document.getElementById('musicPlayer');
+        const welcome = document.getElementById('welcomeScreen');
+        const invitation = document.getElementById('invitation');
+        const enterBtn = document.getElementById('enterBtn'); 
+        const confettiContainer = document.getElementById('confettiContainer');
+        const playPauseBtn = document.getElement
